@@ -1,0 +1,186 @@
+.counterSection {
+  background: linear-gradient(135deg, #FFE8ED 0%, #FFF5F7 100%);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.counterSection::before {
+  content: '💕';
+  position: absolute;
+  font-size: 15rem;
+  opacity: 0.05;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content {
+  text-align: center;
+}
+
+.icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: swing 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.title {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  margin-bottom: 3rem;
+}
+
+/* Counter grid */
+.counterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeBox {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.timeBox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-romantic);
+}
+
+.timeBox:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 50px rgba(230, 57, 70, 0.15);
+}
+
+.timeValue {
+  font-size: 3rem;
+  font-weight: 700;
+  background: var(--gradient-romantic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: countPulse 2s ease-in-out infinite;
+}
+
+@keyframes countPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+.timeLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.timeIcon {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}
+
+.message {
+  font-size: 1.25rem;
+  color: var(--color-text-dark);
+  font-weight: 500;
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .counterSection {
+    padding: 4rem 0;
+  }
+
+  .counterGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .timeBox {
+    padding: 1.5rem 1rem;
+  }
+
+  .timeValue {
+    font-size: 2.5rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .message {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .counterGrid {
+    gap: 1rem;
+  }
+
+  .timeBox {
+    padding: 1.25rem 0.875rem;
+  }
+
+  .timeValue {
+    font-size: 2rem;
+  }
+
+  .timeLabel {
+    font-size: 0.75rem;
+  }
+
+  .timeIcon {
+    font-size: 1.25rem;
+  }
+}

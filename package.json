@@ -1,0 +1,37 @@
+{
+  "name": "valentines-day-website",
+  "version": "1.0.0",
+  "description": "A beautiful, interactive Valentine's Day website with parallax scrolling, photo timeline, mini-game, and invitation reveal. Built with Next.js and TypeScript.",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/valentines-day-website"
+  },
+  "keywords": [
+    "valentines-day",
+    "romantic-website",
+    "nextjs",
+    "typescript",
+    "parallax",
+    "love-story"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "dev:network": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.3.3"
+  }
+}

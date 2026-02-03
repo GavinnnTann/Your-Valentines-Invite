@@ -1,0 +1,56 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Personal configuration (keep your personal info private!)
+# Remove this section if you want to track your config
+src/config/loveConfig.ts
+
+# Personal photos (keep your photos private!)
+# Remove this section if you want to track your photos
+public/photos/*.jpg
+public/photos/*.jpeg
+public/photos/*.png
+public/photos/*.gif
+public/photos/*.webp
+
+# Keep example files and READMEs
+!public/photos/README_PHOTOS.txt
+!public/photos/.gitkeep

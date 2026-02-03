@@ -1,0 +1,14 @@
+<!-- 
+  Add a favicon.ico file here for your site icon!
+  
+  This will appear in browser tabs and bookmarks.
+  
+  You can:
+  1. Create one at: https://favicon.io/
+  2. Use an emoji-based icon
+  3. Convert a small image to .ico format
+  
+  Recommended: Use a heart or tulip icon 💕🌷
+  
+  This note can be deleted once you add favicon.ico
+-->

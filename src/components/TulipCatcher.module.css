@@ -1,0 +1,285 @@
+.gameSection {
+  background: linear-gradient(180deg, var(--color-warm-cream) 0%, var(--color-cream) 100%);
+  padding: 6rem 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.gameHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.gameHeader h2 {
+  margin-bottom: 1rem;
+}
+
+.gameHeader p {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+}
+
+/* Start screen */
+.startScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.startCard {
+  background: white;
+  border-radius: 32px;
+  padding: 3rem;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.gameIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.startCard h3 {
+  margin-bottom: 2rem;
+  color: var(--color-primary);
+}
+
+.instructions {
+  text-align: left;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.instructions li {
+  padding: 0.75rem 0;
+  font-size: 1.125rem;
+  color: var(--color-text-dark);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.instructions li:last-child {
+  border-bottom: none;
+}
+
+/* Score board */
+.scoreBoard {
+  margin-bottom: 2rem;
+}
+
+.scoreBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scoreLabel {
+  font-weight: 600;
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+}
+
+.scoreValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient-romantic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.progressBar {
+  width: 100%;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gradient-romantic);
+  border-radius: 50px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.5);
+}
+
+/* Game area */
+.gameArea {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(180deg, 
+    rgba(255, 235, 240, 0.3) 0%, 
+    rgba(255, 245, 247, 0.6) 100%
+  );
+  border-radius: 24px;
+  border: 3px dashed var(--color-accent);
+  overflow: hidden;
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.tulip {
+  position: absolute;
+  font-size: 4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+  animation: wiggle 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  padding: 1rem;
+  z-index: 1;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.tulip:hover {
+  transform: scale(1.3);
+}
+
+.tulip:active {
+  transform: scale(0.8);
+  filter: drop-shadow(0 2px 4px rgba(230, 57, 70, 0.6));
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.waitingMessage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  font-weight: 600;
+  text-align: center;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Victory confetti */
+.confettiContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.confetti {
+  position: absolute;
+  font-size: 2rem;
+  animation: confettiFall 3s ease-out infinite;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gameSection {
+    padding: 4rem 0;
+  }
+
+  .startCard {
+    padding: 2rem;
+  }
+
+  .gameArea {
+    height: 450px;
+  }
+
+  .tulip {
+    font-size: 2.5rem;
+  }
+
+  .instructions li {
+    font-size: 1rem;
+  }
+
+  .gameIcon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameArea {
+    height: 400px;
+  }
+
+  .tulip {
+    font-size: 3rem;
+    padding: 1rem;
+  }
+
+  .scoreBadge {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .scoreValue {
+    font-size: 1.25rem;
+  }
+
+  .startCard {
+    padding: 1.5rem;
+  }
+
+  .confetti {
+    font-size: 1.5rem;
+  }
+}

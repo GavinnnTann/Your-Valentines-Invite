@@ -1,0 +1,2 @@
+# This file ensures the photos directory is tracked by git even when empty
+# Add your photos here: photo_1.jpg, photo_2.jpg, etc.

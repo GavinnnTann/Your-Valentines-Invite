@@ -1,0 +1,317 @@
+.inviteContainer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #FFE8ED 0%, #FFF5F7 100%);
+}
+
+.inviteCard {
+  position: relative;
+  background: white;
+  border-radius: 32px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 30px 80px rgba(230, 57, 70, 0.2);
+  animation: slideUp 0.8s ease-out;
+  z-index: 2;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.flowerDecoration {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.flowerDecoration span {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.2s);
+}
+
+.flowerDecoration span:nth-child(1) {
+  --i: 0;
+}
+
+.flowerDecoration span:nth-child(2) {
+  --i: 1;
+}
+
+.flowerDecoration span:nth-child(3) {
+  --i: 2;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.inviteTitle {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  margin-bottom: 2rem;
+  background: var(--gradient-romantic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Invite details */
+.inviteDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: var(--color-warm-cream);
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.detailIcon {
+  font-size: 2rem;
+  min-width: 50px;
+  text-align: center;
+}
+
+.detailLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.detailValue {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.inviteMessage {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+/* Action buttons */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.yesButton {
+  width: 100%;
+  font-size: 1.25rem;
+  padding: 1.25rem 2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.yesButton:hover {
+  animation: none;
+}
+
+.secondaryActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.secondaryActions button {
+  font-size: 0.9rem;
+  padding: 0.875rem 1rem;
+}
+
+/* Play again section */
+.playAgainSection {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px dashed var(--color-accent);
+  text-align: center;
+}
+
+.playAgainButton {
+  background: transparent;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  border: 2px solid var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.playAgainButton:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* Heart border decoration */
+.heartBorder {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+}
+
+.heartIcon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 8px rgba(230, 57, 70, 0.3));
+  animation: bounce 2s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+
+.heartBorder span:nth-child(1) { --i: 0; }
+.heartBorder span:nth-child(2) { --i: 1; }
+.heartBorder span:nth-child(3) { --i: 2; }
+.heartBorder span:nth-child(4) { --i: 3; }
+.heartBorder span:nth-child(5) { --i: 4; }
+.heartBorder span:nth-child(6) { --i: 5; }
+.heartBorder span:nth-child(7) { --i: 6; }
+.heartBorder span:nth-child(8) { --i: 7; }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Floating hearts background */
+.floatingHearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatingHeart {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.6;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .inviteCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .flowerDecoration {
+    font-size: 2.5rem;
+    gap: 1.5rem;
+  }
+
+  .inviteDetails {
+    padding: 1.5rem;
+  }
+
+  .detailIcon {
+    font-size: 1.5rem;
+    min-width: 40px;
+  }
+
+  .detailValue {
+    font-size: 1rem;
+  }
+
+  .secondaryActions {
+    grid-template-columns: 1fr;
+  }
+
+  .yesButton {
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .heartBorder {
+    top: -15px;
+  }
+
+  .heartIcon {
+    font-size: 1.25rem;
+  }
+
+  .floatingHeart {
+    font-size: 1.5rem;
+  }
+}
