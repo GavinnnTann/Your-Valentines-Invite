@@ -17,7 +17,7 @@ export default function InviteCard({ onPlayAgain }: InviteCardProps) {
 
   const handleYesClick = () => {
     // Show celebration modal or directly trigger actions
-    alert('🎉 Yay! I knew you would say yes... I can\'t wait to celebrate with you!! 💕');
+    alert('🎉 Yay! Anh biết em sẽ đồng ý mà... Mong chờ được ăn mừng cùng em!! 💕');
   };
 
   const handleNoClick = () => {
@@ -34,7 +34,7 @@ export default function InviteCard({ onPlayAgain }: InviteCardProps) {
 
     // Calculate distance from cursor to button center
     const distance = Math.sqrt(
-      Math.pow(cursorX - buttonCenterX, 2) + 
+      Math.pow(cursorX - buttonCenterX, 2) +
       Math.pow(cursorY - buttonCenterY, 2)
     );
 
@@ -46,7 +46,7 @@ export default function InviteCard({ onPlayAgain }: InviteCardProps) {
 
       // Calculate direction away from cursor
       const angle = Math.atan2(buttonCenterY - cursorY, buttonCenterX - cursorX);
-      
+
       // Move button 400px away in that direction (fast escape!)
       const moveDistance = 400;
       let newX = buttonRect.left + Math.cos(angle) * moveDistance;
@@ -56,7 +56,7 @@ export default function InviteCard({ onPlayAgain }: InviteCardProps) {
       const padding = 40;
       const maxX = window.innerWidth - buttonRect.width - padding;
       const maxY = window.innerHeight - buttonRect.height - padding;
-      
+
       newX = Math.max(padding, Math.min(newX, maxX));
       newY = Math.max(padding, Math.min(newY, maxY));
 
@@ -128,7 +128,7 @@ END:VCALENDAR`;
   };
 
   return (
-    <div 
+    <div
       className={styles.inviteContainer}
       ref={containerRef}
       onMouseMove={handleMouseMove}
@@ -136,10 +136,10 @@ END:VCALENDAR`;
     >
       <div className={styles.inviteCard}>
         <h2 className={styles.inviteTitle}>{loveConfig.inviteTitle}</h2>
-        
+
         <div className={styles.catRoseContainer}>
-          <Image 
-            src="/cat-rose.gif" 
+          <Image
+            src="/cat-rose.gif"
             alt="Cat with rose"
             width={200}
             height={200}
@@ -147,12 +147,12 @@ END:VCALENDAR`;
             unoptimized
           />
         </div>
-        
+
         <div className={styles.inviteDetails}>
           <div className={styles.detailItem}>
             <span className={styles.detailIcon}>📅</span>
             <div>
-              <div className={styles.detailLabel}>Date</div>
+              <div className={styles.detailLabel}>Ngày</div>
               <div className={styles.detailValue}>{loveConfig.inviteDate}</div>
             </div>
           </div>
@@ -160,7 +160,7 @@ END:VCALENDAR`;
           <div className={styles.detailItem}>
             <span className={styles.detailIcon}>🕐</span>
             <div>
-              <div className={styles.detailLabel}>Time</div>
+              <div className={styles.detailLabel}>Giờ</div>
               <div className={styles.detailValue}>{loveConfig.inviteTime}</div>
             </div>
           </div>
@@ -168,7 +168,7 @@ END:VCALENDAR`;
           <div className={styles.detailItem}>
             <span className={styles.detailIcon}>📍</span>
             <div>
-              <div className={styles.detailLabel}>Location</div>
+              <div className={styles.detailLabel}>Địa điểm</div>
               <div className={styles.detailValue}>{loveConfig.inviteLocation}</div>
             </div>
           </div>
@@ -177,14 +177,14 @@ END:VCALENDAR`;
         <p className={styles.inviteMessage}>{loveConfig.inviteMessage}</p>
 
         <div className={styles.actionButtons}>
-          <button 
+          <button
             className={`btn-primary ${styles.yesButton}`}
             onClick={handleYesClick}
           >
-            Yes! I'd Love To! 💕
+            Đồng ý! Em rất thích! 💕
           </button>
 
-          <button 
+          <button
             ref={noButtonRef}
             className={`btn-secondary ${styles.noButton} ${isNoButtonEscaping ? styles.noButtonEscaping : ''}`}
             style={{
@@ -196,32 +196,32 @@ END:VCALENDAR`;
             }}
             onClick={handleNoClick}
           >
-            No 😢
+            Không 😢
           </button>
 
           <div className={styles.secondaryActions}>
-            <button 
+            <button
               className="btn-secondary"
               onClick={handleAddToCalendar}
             >
-              📅 Add to Calendar
+              📅 Thêm vào lịch
             </button>
 
-            <button 
+            <button
               className="btn-secondary"
               onClick={handleSendAnswer}
             >
-              💌 Send My Answer
+              💌 Gửi câu trả lời
             </button>
           </div>
         </div>
 
         <div className={styles.playAgainSection}>
-          <button 
+          <button
             className={styles.playAgainButton}
             onClick={onPlayAgain}
           >
-            🎮 Play Game Again
+            🎮 Chơi lại game
           </button>
         </div>
       </div>

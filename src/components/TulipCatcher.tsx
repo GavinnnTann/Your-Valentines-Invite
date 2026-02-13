@@ -48,7 +48,7 @@ export default function TulipCatcher({ onComplete, gameCompleted }: TulipCatcher
       const animate = () => {
         const now = Date.now();
         const delta = now - lastTime;
-        
+
         // Update every 16ms (roughly 60fps) but with slower movement
         if (delta > 16) {
           setTulips(prev => {
@@ -58,7 +58,7 @@ export default function TulipCatcher({ onComplete, gameCompleted }: TulipCatcher
           });
           lastTime = now;
         }
-        
+
         animationFrameRef.current = requestAnimationFrame(animate);
       };
 
@@ -92,7 +92,7 @@ export default function TulipCatcher({ onComplete, gameCompleted }: TulipCatcher
     e.stopPropagation();
     setTulips(prev => prev.filter(t => t.id !== tulipId));
     setScore(prev => prev + 1);
-    
+
     // Haptic feedback on mobile
     if ('vibrate' in navigator) {
       navigator.vibrate(50);
@@ -141,22 +141,22 @@ export default function TulipCatcher({ onComplete, gameCompleted }: TulipCatcher
     <section className={styles.gameSection}>
       <div className={styles.container}>
         <div className={styles.gameHeader}>
-          <h2>A Little Game for You 🌷</h2>
-          <p>Catch {TARGET_SCORE} falling tulips to reveal something special!</p>
+          <h2>Một Trò Chơi Nhỏ Cho Em 🌷</h2>
+          <p>Hãy bắt {TARGET_SCORE} bông hoa tulip đang rơi để mở món quà đặc biệt!</p>
         </div>
 
         {!gameStarted ? (
           <div className={styles.startScreen}>
             <div className={styles.startCard}>
               <div className={styles.gameIcon}>🎮</div>
-              <h3>How to Play</h3>
+              <h3>Cách Chơi</h3>
               <ul className={styles.instructions}>
-                <li>🌷 Tap the falling tulips to catch them</li>
-                <li>🎯 Catch {TARGET_SCORE} tulips to win</li>
-                <li>⏱️ Don't let them fall off the screen!</li>
+                <li>🌷 Chạm vào những bông hoa tulip đang rơi để bắt chúng</li>
+                <li>🎯 Bắt đủ {TARGET_SCORE} bông hoa để chiến thắng</li>
+                <li>⏱️ Đừng để chúng rơi khỏi màn hình nhé!</li>
               </ul>
               <button className="btn-primary" onClick={startGame}>
-                Start Game
+                Bắt Đầu
               </button>
             </div>
           </div>
@@ -164,11 +164,11 @@ export default function TulipCatcher({ onComplete, gameCompleted }: TulipCatcher
           <>
             <div className={styles.scoreBoard}>
               <div className={styles.scoreBadge}>
-                <span className={styles.scoreLabel}>Score:</span>
+                <span className={styles.scoreLabel}>Điểm:</span>
                 <span className={styles.scoreValue}>{score} / {TARGET_SCORE}</span>
               </div>
               <div className={styles.progressBar}>
-                <div 
+                <div
                   className={styles.progressFill}
                   style={{ width: `${(score / TARGET_SCORE) * 100}%` }}
                 ></div>
@@ -191,10 +191,10 @@ export default function TulipCatcher({ onComplete, gameCompleted }: TulipCatcher
                   🌷
                 </button>
               ))}
-              
+
               {tulips.length === 0 && (
                 <div className={styles.waitingMessage}>
-                  Get ready! Tulips are coming... 🌷
+                  Sẵn sàng chưa! Hoa tulip đang tới... 🌷
                 </div>
               )}
             </div>

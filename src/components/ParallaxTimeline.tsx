@@ -18,9 +18,9 @@ export default function ParallaxTimeline() {
   const photoItems: PhotoItem[] = Array.from({ length: loveConfig.photoCount }, (_, i) => ({
     src: `/photos/photo_${i + 1}.jpg`,
     milestone: loveConfig.milestones[i] || {
-      title: 'Beautiful Memory',
-      date: 'Our Journey',
-      description: 'Every moment with you is a treasure.'
+      title: 'Kỷ Niệm Đẹp',
+      date: 'Hành Trình Của Chúng Ta',
+      description: 'Mỗi khoảnh khắc bên em là một kho báu.'
     },
     index: i
   }));
@@ -63,15 +63,15 @@ export default function ParallaxTimeline() {
 
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2>Our Love Story</h2>
-          <p>Every moment, a chapter in our beautiful journey together</p>
+          <h2>Chuyện Tình Của Chúng Mình</h2>
+          <p>Mỗi khoảnh khắc là một chương trong hành trình tuyệt đẹp của đôi ta</p>
         </div>
 
         <div className={styles.timelineTrack}>
           {photoItems.map((item, index) => {
             const isEven = index % 2 === 0;
             const isVisible = visibleItems.has(index);
-            
+
             return (
               <div
                 key={index}
@@ -82,8 +82,8 @@ export default function ParallaxTimeline() {
                   {/* Photo */}
                   <div className={styles.photoWrapper}>
                     <div className={styles.photoFrame}>
-                      <img 
-                        src={item.src} 
+                      <img
+                        src={item.src}
                         alt={item.milestone.title}
                         className={styles.photo}
                         loading="lazy"

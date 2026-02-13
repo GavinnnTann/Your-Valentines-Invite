@@ -22,7 +22,7 @@ export default function TimeCounter() {
       // Parse the relationship start date (Singapore timezone)
       const startDate = new Date(loveConfig.relationshipStart);
       const now = new Date();
-      
+
       // Calculate difference in milliseconds
       const difference = now.getTime() - startDate.getTime();
 
@@ -58,39 +58,39 @@ export default function TimeCounter() {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.icon}>⏰</div>
-          <h2 className={styles.title}>Time We've Shared</h2>
+          <h2 className={styles.title}>Thời Gian Bên Nhau</h2>
           <p className={styles.subtitle}>
-            Every second with you is a treasure
+            Mỗi giây phút bên em là vô giá
           </p>
 
           <div className={styles.counterGrid}>
             <div className={styles.timeBox}>
               <div className={styles.timeValue}>{timeLeft.days}</div>
-              <div className={styles.timeLabel}>Days</div>
+              <div className={styles.timeLabel}>Ngày</div>
               <div className={styles.timeIcon}>📅</div>
             </div>
 
             <div className={styles.timeBox}>
               <div className={styles.timeValue}>{timeLeft.hours}</div>
-              <div className={styles.timeLabel}>Hours</div>
+              <div className={styles.timeLabel}>Giờ</div>
               <div className={styles.timeIcon}>🕐</div>
             </div>
 
             <div className={styles.timeBox}>
               <div className={styles.timeValue}>{timeLeft.minutes}</div>
-              <div className={styles.timeLabel}>Minutes</div>
+              <div className={styles.timeLabel}>Phút</div>
               <div className={styles.timeIcon}>⏱️</div>
             </div>
 
             <div className={styles.timeBox}>
               <div className={styles.timeValue}>{timeLeft.seconds}</div>
-              <div className={styles.timeLabel}>Seconds</div>
+              <div className={styles.timeLabel}>Giây</div>
               <div className={styles.timeIcon}>⚡</div>
             </div>
           </div>
 
           <p className={styles.message}>
-            ...and counting! Here's to infinity more moments together💕
+            ...và vẫn đang tiếp tục! Cùng nhau đi đến mãi mãi em nhé 💕
           </p>
         </div>
       </div>
